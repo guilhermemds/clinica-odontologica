@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --azul:#1B3A5C;
+  --azul-claro:#2A5080;
+  --dourado:#C9A84C;
+  --dourado-claro:#E8C76A;
+  --cinza:#F7F8FA;
+  --branco:#FFFFFF;
+  --texto:#1a1a1a;
+  --texto-sec:#4a5568;
+}
+body{font-family:'Inter',sans-serif;color:var(--texto);overflow-x:hidden;}
+
+/* HEADER */
+header{background:var(--azul);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.logo{color:var(--branco);font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;letter-spacing:0.5px;}
+.logo span{color:var(--dourado);}
+nav{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;}
+nav a{color:rgba(255,255,255,0.85);text-decoration:none;font-size:0.875rem;font-weight:400;transition:color 0.2s;}
+nav a:hover{color:var(--dourado);}
+.btn-header{background:var(--dourado);color:var(--azul);padding:0.5rem 1.25rem;border-radius:4px;text-decoration:none;font-size:0.85rem;font-weight:600;transition:background 0.2s;}
+.btn-header:hover{background:var(--dourado-claro);}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--azul) 0%,var(--azul-claro) 60%,#1d4060 100%);min-height:85vh;display:flex;align-items:center;padding:4rem 2rem;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;right:-10%;top:-20%;width:50%;height:140%;background:rgba(201,168,76,0.06);border-radius:50%;transform:rotate(-15deg);}
+.hero-content{max-width:700px;position:relative;z-index:2;}
+.eyebrow{color:var(--dourado);font-size:0.8rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;margin-bottom:1rem;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;color:var(--branco);line-height:1.2;margin-bottom:1.25rem;}
+.hero h1 em{color:var(--dourado);font-style:italic;}
+.hero p{color:rgba(255,255,255,0.78);font-size:1.05rem;font-weight:300;line-height:1.7;margin-bottom:2rem;max-width:500px;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-primary{background:var(--dourado);color:var(--azul);padding:0.85rem 2rem;border-radius:4px;text-decoration:none;font-weight:600;font-size:0.95rem;transition:all 0.2s;}
+.btn-primary:hover{background:var(--dourado-claro);transform:translateY(-1px);}
+.btn-secondary{border:1.5px solid rgba(255,255,255,0.4);color:var(--branco);padding:0.85rem 2rem;border-radius:4px;text-decoration:none;font-weight:400;font-size:0.95rem;transition:all 0.2s;}
+.btn-secondary:hover{border-color:var(--dourado);color:var(--dourado);}
+
+/* STATS */
+.stats{background:var(--dourado);padding:1.5rem 2rem;display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;}
+.stat{text-align:center;}
+.stat strong{display:block;font-size:1.6rem;font-weight:700;color:var(--azul);font-family:'Playfair Display',serif;}
+.stat span{font-size:0.8rem;color:rgba(27,58,92,0.75);font-weight:500;}
+
+/* SECTIONS */
+section{padding:4rem 2rem;}
+.container{max-width:1000px;margin:0 auto;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.2rem);font-weight:700;color:var(--azul);margin-bottom:0.5rem;}
+.section-sub{color:var(--texto-sec);font-size:0.95rem;font-weight:300;line-height:1.6;margin-bottom:2.5rem;max-width:480px;}
+
+/* DIFERENCIAIS */
+.diferenciais{background:var(--cinza);}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;}
+.card{background:var(--branco);border:0.5px solid #e2e6ea;border-radius:12px;padding:1.75rem 1.5rem;}
+.card-icon{width:48px;height:48px;background:rgba(27,58,92,0.08);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.4rem;}
+.card h3{font-size:1rem;font-weight:600;color:var(--azul);margin-bottom:0.5rem;}
+.card p{font-size:0.875rem;color:var(--texto-sec);line-height:1.6;font-weight:300;}
+.card-accent{border-top:2px solid var(--dourado);}
+
+/* TRATAMENTOS */
+.trat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;}
+.trat-item{background:var(--cinza);border-radius:8px;padding:1.25rem 1rem;display:flex;align-items:flex-start;gap:0.75rem;transition:all 0.2s;cursor:default;}
+.trat-item:hover{background:var(--azul);transform:translateY(-2px);}
+.trat-item:hover .trat-nome,.trat-item:hover .trat-desc{color:var(--branco);}
+.trat-item:hover .trat-ico{background:var(--dourado);color:var(--azul);}
+.trat-ico{width:36px;height:36px;min-width:36px;background:rgba(27,58,92,0.1);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:all 0.2s;}
+.trat-nome{font-size:0.9rem;font-weight:600;color:var(--azul);margin-bottom:0.2rem;transition:color 0.2s;}
+.trat-desc{font-size:0.78rem;color:var(--texto-sec);font-weight:300;line-height:1.4;transition:color 0.2s;}
+
+/* SOBRE */
+.sobre{background:var(--azul);}
+.sobre-grid{display:grid;grid-template-columns:1fr 2fr;gap:3rem;align-items:center;}
+.foto-placeholder{width:100%;aspect-ratio:3/4;background:rgba(255,255,255,0.08);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:4rem;border:0.5px solid rgba(255,255,255,0.15);}
+.sobre .section-title{color:var(--branco);}
+.sobre .section-sub{color:rgba(255,255,255,0.7);max-width:100%;margin-bottom:1.5rem;}
+.sobre p{color:rgba(255,255,255,0.65);font-size:0.9rem;font-weight:300;line-height:1.7;margin-bottom:1.5rem;}
+.badges{display:flex;gap:0.75rem;flex-wrap:wrap;}
+.badge{background:rgba(201,168,76,0.15);border:0.5px solid rgba(201,168,76,0.4);color:var(--dourado);padding:0.4rem 0.9rem;border-radius:20px;font-size:0.78rem;font-weight:500;}
+
+/* DEPOIMENTOS */
+.dep-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;}
+.dep-card{background:var(--branco);border:0.5px solid #e2e6ea;border-radius:12px;padding:1.5rem;}
+.dep-stars{color:var(--dourado);font-size:0.85rem;margin-bottom:0.75rem;letter-spacing:1px;}
+.dep-texto{font-size:0.875rem;color:var(--texto-sec);line-height:1.7;font-weight:300;margin-bottom:1rem;font-style:italic;}
+.dep-autor{display:flex;align-items:center;gap:0.75rem;}
+.avatar{width:38px;height:38px;border-radius:50%;background:rgba(27,58,92,0.1);display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:600;color:var(--azul);}
+.dep-nome{font-size:0.85rem;font-weight:600;color:var(--azul);}
+.dep-tempo{font-size:0.75rem;color:var(--texto-sec);}
+
+/* CTA FINAL */
+.cta-final{background:var(--cinza);text-align:center;}
+.cta-final .section-title{margin-bottom:0.5rem;}
+.cta-final .section-sub{margin:0 auto 2rem;}
+.form-simples{display:flex;flex-direction:column;gap:0.75rem;max-width:480px;margin:0 auto;}
+.form-simples input,
+.form-simples select{padding:0.85rem 1rem;border:1px solid #d1d5db;border-radius:6px;font-size:0.9rem;font-family:'Inter',sans-serif;outline:none;background:var(--branco);color:var(--texto);transition:border 0.2s;}
+.form-simples input:focus,
+.form-simples select:focus{border-color:var(--azul);}
+.btn-form{background:var(--azul);color:var(--branco);padding:0.95rem;border:none;border-radius:6px;font-size:0.95rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:background 0.2s;}
+.btn-form:hover{background:var(--azul-claro);}
+
+/* WHATSAPP */
+.wpp{position:fixed;bottom:1.5rem;right:1.5rem;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1.6rem;box-shadow:0 4px 12px rgba(37,211,102,0.35);z-index:999;transition:transform 0.2s;}
+.wpp:hover{transform:scale(1.1);}
+
+/* FOOTER */
+footer{background:var(--azul);padding:2rem;text-align:center;}
+.footer-info{color:rgba(255,255,255,0.6);font-size:0.8rem;font-weight:300;line-height:1.8;}
+.footer-info strong{color:var(--dourado);font-weight:500;}
+
+@media(max-width:650px){
+  .sobre-grid{grid-template-columns:1fr;}
+  .foto-placeholder{height:200px;aspect-ratio:auto;}
+  .stats{gap:1.5rem;}
+  nav{display:none;}
+}
+
+.fade-in{opacity:0;transform:translateY(18px);transition:opacity 0.5s ease,transform 0.5s ease;}
+.fade-in.visible{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Sorriso <span>Pleno</span></div>
+  <nav>
+    <a href="#">Tratamentos</a>
+    <a href="#">Sobre nós</a>
+    <a href="#">Depoimentos</a>
+    <a href="#">Contato</a>
+  </nav>
+  <a href="#agendar" class="btn-header">Agendar consulta</a>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">Clínica Odontológica</div>
+    <h1>Transforme seu sorriso.<br><em>Transforme sua vida.</em></h1>
+    <p>Tratamentos personalizados com tecnologia de ponta e cuidado humanizado. Porque cada sorriso conta uma história única.</p>
+    <div class="hero-btns">
+      <a href="#agendar" class="btn-primary">Agendar agora</a>
+      <a href="#tratamentos" class="btn-secondary">Ver tratamentos</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><strong>+2.000</strong><span>Pacientes atendidos</span></div>
+  <div class="stat"><strong>+10 anos</strong><span>De experiência</span></div>
+  <div class="stat"><strong>98%</strong><span>De satisfação</span></div>
+  <div class="stat"><strong>5 ★</strong><span>No Google</span></div>
+</div>
+
+<section class="diferenciais fade-in">
+  <div class="container">
+    <p class="section-title">Por que nos escolher?</p>
+    <p class="section-sub">Três pilares que guiam cada tratamento e cada atendimento.</p>
+    <div class="cards-grid">
+      <div class="card card-accent">
+        <div class="card-icon">🔬</div>
+        <h3>Tecnologia digital</h3>
+        <p>Scanner 3D intraoral, radiografias digitais e planejamento computadorizado para diagnósticos precisos.</p>
+      </div>
+      <div class="card card-accent">
+        <div class="card-icon">🤝</div>
+        <h3>Cuidado humanizado</h3>
+        <p>Ambiente acolhedor, sem julgamento, onde o paciente é ouvido e colocado no centro de cada decisão.</p>
+      </div>
+      <div class="card card-accent">
+        <div class="card-icon">✨</div>
+        <h3>Resultados duradouros</h3>
+        <p>Materiais premium e técnicas avançadas que garantem estética, função e longevidade ao seu sorriso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tratamentos" class="fade-in">
+  <div class="container">
+    <p class="section-title">Nossos tratamentos</p>
+    <p class="section-sub">Soluções completas para sua saúde bucal e estética dental.</p>
+    <div class="trat-grid">
+      <div class="trat-item">
+        <div class="trat-ico">☀️</div>
+        <div><div class="trat-nome">Clareamento dental</div><div class="trat-desc">Dentes mais brancos em poucas sessões</div></div>
+      </div>
+      <div class="trat-item">
+        <div class="trat-ico">💎</div>
+        <div><div class="trat-nome">Facetas de porcelana</div><div class="trat-desc">Transformação completa do sorriso</div></div>
+      </div>
+      <div class="trat-item">
+        <div class="trat-ico">🦷</div>
+        <div><div class="trat-nome">Implantes dentais</div><div class="trat-desc">Substitutos permanentes e naturais</div></div>
+      </div>
+      <div class="trat-item">
+        <div class="trat-ico">🔄</div>
+        <div><div class="trat-nome">Ortodontia invisível</div><div class="trat-desc">Alinhamento sem aparelho convencional</div></div>
+      </div>
+      <div class="trat-item">
+        <div class="trat-ico">🩺</div>
+        <div><div class="trat-nome">Tratamento de canal</div><div class="trat-desc">Seguro, preciso e sem desconforto</div></div>
+      </div>
+      <div class="trat-item">
+        <div class="trat-ico">🛡️</div>
+        <div><div class="trat-nome">Limpeza e prevenção</div><div class="trat-desc">Saúde bucal em dia com rotina simples</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sobre fade-in">
+  <div class="container">
+    <div class="sobre-grid">
+      <div class="foto-placeholder">👩‍⚕️</div>
+      <div>
+        <p class="section-title">Dra. Ana Lima</p>
+        <p class="section-sub">Especialista em Estética e Reabilitação Oral</p>
+        <p>Com mais de 10 anos dedicados à odontologia, minha missão é simples: devolver a confiança do meu paciente através de um sorriso saudável e bonito. Acredito que um bom tratamento começa com escuta e empatia.</p>
+        <p>Formada pela USP, com especializações em Lisboa e São Paulo, combino técnica apurada com um atendimento que faz você se sentir em casa.</p>
+        <div class="badges">
+          <span class="badge">CRO-SP ativo</span>
+          <span class="badge">+10 anos de experiência</span>
+          <span class="badge">+2.000 pacientes</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="fade-in">
+  <div class="container">
+    <p class="section-title">O que dizem nossos pacientes</p>
+    <p class="section-sub">Histórias reais de quem transformou o próprio sorriso.</p>
+    <div class="dep-grid">
+      <div class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-texto">"Tinha muito medo de dentista, mas na Clínica Sorriso Pleno me senti acolhida desde o primeiro momento. Resultado incrível!"</p>
+        <div class="dep-autor"><div class="avatar">CM</div><div><div class="dep-nome">Carla Mendes</div><div class="dep-tempo">Facetas de porcelana · há 2 meses</div></div></div>
+      </div>
+      <div class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-texto">"Fiz o implante e ficou perfeito. Ninguém percebe que é artificial. Profissional e cuidadosa em cada etapa do tratamento."</p>
+        <div class="dep-autor"><div class="avatar">RF</div><div><div class="dep-nome">Roberto Faria</div><div class="dep-tempo">Implante dental · há 4 meses</div></div></div>
+      </div>
+      <div class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-texto">"O clareamento mudou minha autoestima. Sorrio com confiança em reuniões de trabalho agora. Recomendo demais!"</p>
+        <div class="dep-autor"><div class="avatar">JS</div><div><div class="dep-nome">Juliana Santos</div><div class="dep-tempo">Clareamento dental · há 1 mês</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="agendar" class="cta-final fade-in">
+  <div class="container">
+    <p class="section-title">Seu novo sorriso começa com uma consulta</p>
+    <p class="section-sub">Preencha o formulário e entraremos em contato para confirmar seu horário.</p>
+    <div class="form-simples">
+      <input type="text" placeholder="Seu nome completo"/>
+      <input type="tel" placeholder="WhatsApp (com DDD)"/>
+      <select>
+        <option value="">Tratamento de interesse</option>
+        <option>Clareamento dental</option>
+        <option>Facetas de porcelana</option>
+        <option>Implantes dentais</option>
+        <option>Ortodontia invisível</option>
+        <option>Tratamento de canal</option>
+        <option>Limpeza e prevenção</option>
+        <option>Consulta de avaliação</option>
+      </select>
+      <button class="btn-form">Quero agendar minha consulta</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="footer-info">
+    <strong>Clínica Sorriso Pleno</strong><br>
+    Rua das Flores, 1245 — Centro · (41) 99999-0000 · contato@sorrisopleno.com.br<br>
+    CRO-SP 12345 · © 2025 Clínica Sorriso Pleno. Todos os direitos reservados.
+  </p>
+</footer>
+
+<a href="https://wa.me/5541999990000" class="wpp" target="_blank" title="Fale pelo WhatsApp">💬</a>
+
+<script>
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});
+},{threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
+  });
+});
+</script>
+</body>
+</html>
